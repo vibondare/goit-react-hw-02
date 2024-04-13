@@ -47,7 +47,11 @@ function App() {
         resetFeedback={resetFeedback}
       />
       {totalFeedback ? (
-        <Feedback feedback={feedback} totalFeedback={totalFeedback} />
+        <Feedback
+          feedback={feedback}
+          totalFeedback={totalFeedback}
+          positiveFeedback={Math.round((feedback.good / totalFeedback) * 100)}
+        />
       ) : (
         <Notification />
       )}
